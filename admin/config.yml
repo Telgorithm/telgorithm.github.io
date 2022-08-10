@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: Telgorithm/landing
+  branch: master
+  base_url: https://gh-oauth.thm.zone
+media_folder: /assets
+public_folder: /assets
+collections:
+  - name: news
+    label: News
+    folder: news
+    create: true
+    extension: md
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: previewImage, label: Preview Image, widget: image}
+      - { name: articleType, label: Article Type}
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
+  - name: policies
+    label: Policies
+    folder: policies
+    create: true
+    extension: md
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
