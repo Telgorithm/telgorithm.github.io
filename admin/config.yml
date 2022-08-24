@@ -3,8 +3,8 @@ backend:
   repo: Telgorithm/landing
   branch: master
   base_url: https://gh-oauth.thm.zone
-media_folder: /assets
-public_folder: /assets
+media_folder: static/assets/images/
+public_folder: /assets/images
 collections:
   - name: news
     label: News
@@ -12,7 +12,6 @@ collections:
     create: true
     extension: md
     fields:
-      - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: previewImage, label: Preview Image, widget: image}
       - { name: articleType, label: Article Type}
@@ -24,6 +23,5 @@ collections:
     create: true
     extension: md
     fields:
-      - { name: path, label: Path }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
