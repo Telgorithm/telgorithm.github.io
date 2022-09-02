@@ -9,6 +9,9 @@ collections:
   - name: news
     label: News
     folder: news
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
     create: true
     extension: md
     fields:
@@ -20,6 +23,8 @@ collections:
   - name: policies
     label: Policies
     folder: policies
+    media_folder: ''
+    public_folder: ''
     create: true
     extension: md
     fields:
