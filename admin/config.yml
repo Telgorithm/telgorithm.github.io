@@ -30,3 +30,13 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+  - name: data
+    label: Data
+    folder: data
+    create: false
+    delete: false
+    extension: json
+    editor:
+      preview: false
+    fields:
+      - { name: code, label: Data, widget: code, default_language: 'json', allow_language_selection: false, output_code_only: true }
