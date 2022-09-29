@@ -5,6 +5,7 @@ backend:
   base_url: https://gh-oauth.thm.zone
 media_folder: static/assets/images/
 public_folder: /assets/images
+publish_mode: editorial_workflow
 collections:
   - name: news
     label: News
