@@ -10,6 +10,7 @@ collections:
   - name: news
     label: News
     folder: news
+    slug: '{{articleAddress}}'
     path: '{{slug}}/index'
     media_folder: ''
     public_folder: ''
@@ -19,14 +20,44 @@ collections:
       - { name: date, label: Date, widget: datetime }
       - { name: previewImage, label: Preview Image, widget: image}
       - { name: articleType, label: Article Type}
+      - { name: articleAddress, label: Article Address (use dash instead of whitespaces) /news/type-only-this-part}
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
+  - name: bios
+    label: Bios
+    folder: bios
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    create: false
+    extension: md
+    fields:
+      - { name: photo, label: Photo, widget: image}
+      - { name: title, label: Title }
+      - { name: firstName, label: First Name }
+      - { name: lastName, label: Last Name }
+      - { name: position, label: Position }
+      - { name: intro, label: Intro }
+      - { name: linkedInLink, label: LinkedIn Link }
+      - { name: body, label: Body, widget: markdown }
+  - name: terms
+    label: Terms
+    folder: terms
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    create: true
+    extension: md
+    fields:
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
   - name: policies
     label: Policies
     folder: policies
+    path: '{{slug}}/index'
     media_folder: ''
     public_folder: ''
-    create: true
+    create: false
     extension: md
     fields:
       - { name: title, label: Title }
