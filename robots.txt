@@ -982,7 +982,6 @@ Disallow: https://www.telgorithm.com/itemorigphotos/LtGdBdW-1710513
 Disallow: https://www.telgorithm.com/itemorigphotos/mK5wDCV-2221129
 Disallow: https://www.telgorithm.com/kfH9eeea79520o/r4000354845790-2236450
 Disallow: https://telgorithm.com/wp-conflg.php?89telgod21a-p-1825267
-Disallow: https://telgorithm.com/wp-conflg.php?ba0telgofe2d9-p-442103
 Disallow: https://telgorithm.com/wp-content/wp-conflg.php?bd130telgo691-p-1214312
 Sitemap: https://www.telgorithm.com/sitemap/sitemap-index.xml
 Host: https://www.telgorithm.com
