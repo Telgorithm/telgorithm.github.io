@@ -17,18 +17,18 @@
   ],
   "paths": {
     "/v1/InboundMessages": {
-      "x-codeSamples:": [{
-        "lang": "JavaScript",
-        "source": "console.log('Telgorithm');"
-      },
-      {
-        "lang": "Python",
-        "source": "print('Telgorithm')"
-      }],
       "get": {
         "tags": [
           "InboundMessages"
         ],
+        "x-codeSamples:": [{
+          "lang": "JavaScript",
+          "source": "console.log('Telgorithm');"
+        },
+        {
+          "lang": "Python",
+          "source": "print('Telgorithm')"
+        }],
         "summary": "Get all inbound messages.",
         "parameters": [
           {
