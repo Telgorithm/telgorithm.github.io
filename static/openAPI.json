@@ -5735,7 +5735,8 @@
             ],
             "description": "AT&T Message Class.<p>Possible values:</p>\n<ul>\n<li><b>A</b></li>\n<li><b>B</b></li>\n<li><b>C</b></li>\n<li><b>D</b></li>\n<li><b>E</b></li>\n<li><b>F</b></li>\n<li><b>G</b></li>\n<li><b>K</b></li>\n<li><b>N</b></li>\n<li><b>P</b></li>\n<li><b>S</b></li>\n<li><b>T</b></li>\n<li><b>W</b></li>\n<li><b>X</b></li>\n<li><b>Y</b></li>\n<li><b>Z</b></li>\n</ul>\n",
             "nullable": true,
-            "deprecated": true
+            "deprecated": true,
+            "type": "string"
           },
           "tMobileBrandTier": {
             "allOf": [
@@ -5745,7 +5746,8 @@
             ],
             "description": "T-Mobile Brand Tier.<p>Possible values:</p>\n<ul>\n<li><b>Unknown</b></li>\n<li><b>LOW</b></li>\n<li><b>LOWER_MID</b></li>\n<li><b>UPPER_MID</b></li>\n<li><b>TOP</b></li>\n<li><b>UNCAPPED</b></li>\n</ul>\n",
             "nullable": true,
-            "deprecated": true
+            "deprecated": true,
+            "type": "string"
           },
           "verizonWirelessMessageClass": {
             "type": "string",
