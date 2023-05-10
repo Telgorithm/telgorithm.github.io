@@ -12,7 +12,29 @@
   },
   "servers": [
     {
-      "url": "/messaging"
+      "url": "https://api.telgorithm.com/messaging"
+    }
+  ],
+  "x-tagGroups": [
+    {
+      "name": "Messages",
+      "tags": ["InboundMessages", "OutboundMessages"]
+    },
+    {
+      "name": "Numbers",
+      "tags": ["Phones", "OptOuts"]
+    },
+    {
+      "name": "Messaging",
+      "tags": ["MessagingConfigs", "TcrBrands", "TcrCampaigns"]
+    },
+    {
+      "name": "Voice",
+      "tags": ["Voice"]
+    },
+    {
+      "name": "Other",
+      "tags": ["TimeZones", "Webhooks", "MyCompany"]
     }
   ],
   "paths": {
