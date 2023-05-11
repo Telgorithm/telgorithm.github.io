@@ -43,6 +43,7 @@
         "tags": [
           "InboundMessages"
         ],
+        "x-tag-expanded": false,
         "x-codeSamples:": [{
           "lang": "JavaScript",
           "source": "console.log('Telgorithm');"
