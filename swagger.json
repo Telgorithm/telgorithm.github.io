@@ -10,7 +10,13 @@
       "url": "/messaging"
     }
   ],
-  "tags": [{ "name": "Calls", "description": "Calls controller description" }],
+  "tags": [
+    { "name": "Calls", "description": "Calls controller description" },
+    {
+      "name": "INBOUNDMESSAGES",
+      "description": "INBOUNDMESSAGES controller description"
+    }
+  ],
   "paths": {
     "/v1/Calls": {
       "get": {
