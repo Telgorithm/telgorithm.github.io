@@ -292,17 +292,7 @@
 
 
         function executeActionCard() {
-            paycomponentCard.payabliExec('pay', {
-                paymentDetails: {
-                    totalAmount: 100,
-                    serviceFee: 0,
-                    categories: [{
-                        label: 'payment',
-                        amount: 100,
-                        qty: 1
-                    }]
-                }
-            });
+            paycomponentCard.payabliExec('method');
         }
 
         let cardTab = document.getElementById('card-tab');
