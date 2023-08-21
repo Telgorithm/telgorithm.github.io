@@ -308,17 +308,7 @@
         });
 
         payBtn.addEventListener('click', () => {
-            paycomponentCard.payabliExec('pay', {
-                paymentDetails: {
-                    totalAmount: 100,
-                    serviceFee: 0,
-                    categories: [{
-                        label: 'payment',
-                        amount: 100,
-                        qty: 1
-                    }]
-                }
-            });
+            paycomponentCard.payabliExec('method');
         });
 
     </script>
