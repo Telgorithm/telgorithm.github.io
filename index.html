@@ -139,6 +139,10 @@
 
 <body>
     <div>
+        <label>
+            Customer ID
+            <input id="customerId" type="text"/>
+        </label>
         <div id="embeddedComponentStyle">
             <h4>Add Payment Method</h4>
             <div class="tabs">
@@ -171,6 +175,20 @@
     </div>
     <script src="https://embedded-sandbox.payabli.com/1.8/component.js"></script>
     <script>
+        var customerData = {
+                customerId: "",
+                customerNumber: "00001",
+                firstName: "John",
+                lastName: "Doeee",
+                billingEmail: "johndoe@email.com"
+            };
+        function onCustomerIdChange(e) {
+            customerData = {...customerData, customerId: e.currentTarget.value}
+            payabliConfigCard = {...payabliConfigCard, customerData: customerData}
+            payabliConfigACH = {...payabliConfigACH, customerData: customerData}
+            paycomponentCard = new PayabliComponent(payabliConfigCard);
+        }
+        customerId.onchange = onCustomerIdChange
         var token = "o.Pm9taWvhPzqblpYQRKryMNTIQ7H6YPDtN0b4kEhdHShDT5qYoE75mVXCBumweA0QupPcpQFFAUmQS7F76RPfeuBeCOapVi56znmgqMjqqIcz+a8vQNq+IIOSti54E2RgOPGaZbsO9vFofY+0LBmPLCx4dDyPE/6sTrbIgio+rcjnFv2GZN8h/2B8WHns9gjTItyb1/Dk69nHP+dKYoKVFhDHBel/3Ro3mum9vNC8mULexJXg/Chmausyaq0S/d/N52GBRtXUBiSZanPnroV3BY7ulpZJ+8skTv9j1xS5SIhDNpSkoTzGdL4g8PDpgt9fPw9TOMyNaUEWWhdix3AiWR8LzgqA+RY3slrNTbuPcEjeX8L3URjaXftrrNbyNF0lShB7cNAcdck3DKGqaw65L/lYXcgzlILIfGsfquFttCIDRzigibYbQR6BsRV9ian3HyHnHfP/W5wkEGa4E3ltWewzDm+MQuWGVqayxbFHymI=.ClpJlC38rdhQFsxLjCAdX0qHbj3rCazMSZT734+c/T0=";
         var entryPoint = "boulevards";
         var payabliConfigCard = {
@@ -180,6 +198,8 @@
             customCssUrl: "https://embedded-sandbox.payabli.com/customForm.css",
             token: token,
             entryPoint: entryPoint,
+            temporaryToken: false,
+            forceCustomerCreation: false,
             card: {
                 enabled: true,
                 amex: false,
@@ -233,12 +253,7 @@
             ach: {
                 enabled: false
             },
-            customerData: {
-                customerNumber: "00001",
-                firstName: "John",
-                lastName: "Doeee",
-                billingEmail: "johndoe@email.com"
-            },
+            customerData: customerData,
             functionCallBackSuccess: function (response) {
                 alert('card success');
                 console.log(response)
@@ -261,12 +276,9 @@
             defaultOpen: 'ach',
             customCssUrl: "http://localhost:3003/customComponents.css",
             token: token,
-            customerData: {
-                customerNumber: "00001",
-                firstName: "John",
-                lastName: "Doe",
-                billingEmail: "johndoe@email.com"
-            },
+            temporaryToken: false,
+            forceCustomerCreation: false,
+            customerData: customerData,
             card: {
                 enabled: false
             },
