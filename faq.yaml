@@ -3,70 +3,237 @@ info:
   title: Frequently Asked Questions
   version: ''
   description: |
-    ## OpenAPI specification
+    # Migration from Twilio
+
+    Migration of your messaging application from Twilio to Telgorithm is a very simple process. We use the same authorization way - you need only accound sid and secret token. This page guides you through minimum steps to start sending your messages via Telgorithm.
+    
+    ## Sending SMS message
+    To send the SMS message you need only to use Telgorithm URL and change *Body* parameter name to *Text*:
+
+    ### Twilio
+    <pre style="position:relative">
+    <button onclick="this.innerHTML='Copied!'; setTimeout(() => this.innerHTML = 'Copy', 1500);
+    const copyText = `curl -X POST \\ \nhttps://api.twilio.com/2010-04-01/Accounts/$TWILIO_ACCOUNT_SID/Messages.json \\ \n-u $ACCOUNT_SID:$AUTH_TOKEN \\ \n--data-urlencode &quot;From=+15012345678&quot; \\ \n--data-urlencode &quot;To=+12334567890&quot; \\ \n--data-urlencode &quot;Body=Hello, Twilio!&quot;`;
+    navigator.clipboard.writeText(copyText)" 
+    class="m-btn primary thin-border" style="position: absolute; right: 10px; top: 10px; min-width: 85px">
+    Copy
+    </button>
+    <code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token punctuation">\</span>
+    https://api.twilio.com/2010-04-01/Accounts/<span class="token variable">$TWILIO_ACCOUNT_SID</span>/Messages.json <span class="token punctuation">\</span>
+    <span class="token parameter variable">-u</span> <span class="token variable">$ACCOUNT_SID</span><span class="token builtin class-name">:</span><span class="token variable">$AUTH_TOKEN</span> <span class="token punctuation">\</span>
+    --data-urlencode <span class="token string">"From=+15012345678"</span> <span class="token punctuation">\</span>
+    --data-urlencode <span class="token string">"To=+12334567890"</span> <span class="token punctuation">\</span>
+    --data-urlencode <span class="token string" style="color: #027FFF">"Body=Hello, Twilio!"</span>
+    </code>
+    </pre>
+
+    ### Telgorithm
+    <pre style="position:relative">
+    <button onclick="this.innerHTML='Copied!'; setTimeout(() => this.innerHTML = 'Copy', 1500);
+    const copyText = `curl -X POST \\ \nhttps://api.telgorithm.com/messaging/v1/OutboundMessages \\ \n-u $ACCOUNT_SID:$AUTH_TOKEN \\ \n--data-urlencode &quot;From=+15012345678&quot; \\ \n--data-urlencode &quot;To=+12334567890&quot; \\ \n--data-urlencode &quot;Text=Hello, Telgorithm!&quot;`;
+    navigator.clipboard.writeText(copyText)" 
+    class="m-btn primary thin-border" style="position: absolute; right: 10px; top: 10px; min-width: 85px">
+    Copy
+    </button>
+    <code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token punctuation">\</span>
+    https://api.telgorithm.com/messaging/v1/OutboundMessages<span class="token punctuation"> \</span>
+    <span class="token parameter variable">-u</span> <span class="token variable">$ACCOUNT_SID</span><span class="token builtin class-name">:</span><span class="token variable">$AUTH_TOKEN</span> <span class="token punctuation">\</span>
+    --data-urlencode <span class="token string">"From=+15012345678"</span> <span class="token punctuation">\</span>
+    --data-urlencode <span class="token string">"To=+12334567890"</span> <span class="token punctuation">\</span>
+    --data-urlencode <span class="token string" style="color: #027FFF">"Text=Hello, Telgorithm!"</span>
+    </code>
+    </pre>
+
+    ## Sending MMS message
+    
+    ### Twilio
+    <pre style="position:relative">
+    <button onclick="this.innerHTML='Copied!'; setTimeout(() => this.innerHTML = 'Copy', 1500);
+    const copyText = `curl -X POST \\ \nhttps://api.twilio.com/2010-04-01/Accounts/$TWILIO_ACCOUNT_SID/Messages.json \\ \n-u $ACCOUNT_SID:$AUTH_TOKEN \\ \n--data-urlencode &quot;From=+15012345678&quot; \\ \n--data-urlencode &quot;To=+12334567890&quot; \\ \n--data-urlencode &quot;MediaUrl=https://picsum.photos/200.jpg&quot;`;
+    navigator.clipboard.writeText(copyText)" 
+    class="m-btn primary thin-border" style="position: absolute; right: 10px; top: 10px; min-width: 85px">
+    Copy
+    </button>
+    <code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token punctuation">\</span>
+    https://api.twilio.com/2010-04-01/Accounts/<span class="token variable">$TWILIO_ACCOUNT_SID</span>/Messages.json <span class="token punctuation">\</span>
+    <span class="token parameter variable">-u</span> <span class="token variable">$ACCOUNT_SID</span><span class="token builtin class-name">:</span><span class="token variable">$AUTH_TOKEN</span> <span class="token punctuation">\</span>
+    --data-urlencode <span class="token string">"From=+15012345678"</span> <span class="token punctuation">\</span>
+    --data-urlencode <span class="token string">"To=+12334567890"</span> <span class="token punctuation">\</span>
+    --data-urlencode <span class="token string" style="color: #ff723a">"MediaUrl=https://picsum.photos/200.jpg"</span>
+    </code>
+    </pre>
+    ### Telgorithm
+    <pre style="position:relative">
+    <button onclick="this.innerHTML='Copied!'; setTimeout(() => this.innerHTML = 'Copy', 1500);
+    const copyText = `curl -X POST \\ \nhttps://api.telgorithm.com/messaging/v1/OutboundMessages \\ \n-u $ACCOUNT_SID:$AUTH_TOKEN \\ \n--data-urlencode &quot;From=+15012345678&quot; \\ \n--data-urlencode &quot;To=+12334567890&quot; \\ \n--data-urlencode &quot;MediaUrls=['https://picsum.photos/200.jpg']&quot;`;
+    navigator.clipboard.writeText(copyText)" 
+    class="m-btn primary thin-border" style="position: absolute; right: 10px; top: 10px; min-width: 85px">
+    Copy
+    </button>
+    <code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token punctuation">\</span>
+    https://api.telgorithm.com/messaging/v1/OutboundMessages<span class="token punctuation"> \</span>
+    <span class="token parameter variable">-u</span> <span class="token variable">$ACCOUNT_SID</span><span class="token builtin class-name">:</span><span class="token variable">$AUTH_TOKEN</span> <span class="token punctuation">\</span>
+    --data-urlencode <span class="token string">"From=+15012345678"</span> <span class="token punctuation">\</span>
+    --data-urlencode <span class="token string">"To=+12334567890"</span> <span class="token punctuation">\</span>
+    --data-urlencode <span class="token string" style="color: #ff723a">"MediaUrls=['https://picsum.photos/200.jpg']"</span>
+    </code>
+    </pre>
+
+    ## Receiving a message
+
+    Inbound message will cause webhook to your configured endpoint:
+
+    ### Twilio
+    <pre style="position:relative">
+    <button onclick="this.innerHTML='Copied!'; setTimeout(() => this.innerHTML = 'Copy', 1500);
+    const copyText = `ToCountry=US&ToState=LA&SmsMessageSid=SM00000000000011111111111122222222&NumMedia=0&ToCity=TRANSYLVANIA
+    &FromZip=90029&SmsSid=SM00000000000011111111111122222222&FromState=CA&SmsStatus=received
+    &FromCity=LOS+ANGELES&Body=Nice+picture%21&FromCountry=US&To=%2B15012345678&ToZip=71276
+    &AddOns=%7B%22status%22%3A%22successful%22%2C%22message%22%3Anull%2C%22code%22%3Anull%2C%22results%22%3A%7B%7D%7D
+    &NumSegments=1&ReferralNumMedia=0&MessageSid=SM00000000000011111111111122222222
+    &AccountSid=AC99999999999999999999999999999999&From=%2B12334567890&ApiVersion=2010-04-01`;
+    navigator.clipboard.writeText(copyText)" 
+    class="m-btn primary thin-border" style="position: absolute; right: 10px; top: 10px; min-width: 85px">
+    Copy
+    </button>
+    <code>ToCountry=US&ToState=LA&SmsMessageSid=SM00000000000011111111111122222222&NumMedia=0&ToCity=TRANSYLVANIA
+    &FromZip=90029&SmsSid=SM00000000000011111111111122222222&FromState=CA&SmsStatus=received
+    &FromCity=LOS+ANGELES&Body=Nice+picture%21&FromCountry=US&To=%2B15012345678&ToZip=71276
+    &AddOns=%7B%22status%22%3A%22successful%22%2C%22message%22%3Anull%2C%22code%22%3Anull%2C%22results%22%3A%7B%7D%7D
+    &NumSegments=1&ReferralNumMedia=0&MessageSid=SM00000000000011111111111122222222
+    &AccountSid=AC99999999999999999999999999999999&From=%2B12334567890&ApiVersion=2010-04-01
+    </code>
+    </pre>
+
+    ### Telgorithm
+    <pre style="position:relative">
+    <button onclick="this.innerHTML='Copied!'; setTimeout(() => this.innerHTML = 'Copy', 1500);
+    const copyText = `{ \n  &quot;sid&quot;: &quot;IM000000000000111111111111222222222222333333333333&quot;, \n  &quot;from&quot;: &quot;+12334567890&quot;, \n  &quot;to&quot;: &quot;+15012345678&quot;, \n  &quot;eventDate&quot;: &quot;2022-06-28T16:27:07.845Z&quot;, \n  &quot;text&quot;: &quot;Nice picture!&quot;, \n  &quot;segmentCount&quot;: 1 \n}`;
+    navigator.clipboard.writeText(copyText)" 
+    class="m-btn primary thin-border" style="position: absolute; right: 10px; top: 10px; min-width: 85px">
+    Copy
+    </button>
+    <code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">  "sid"</span><span class="token operator">:</span> <span class="token string">"IM000000000000111111111111222222222222333333333333"</span><span class="token punctuation">,</span>
+    <span class="token property">  "from"</span><span class="token operator">:</span> <span class="token string">"+12334567890"</span><span class="token punctuation">,</span>
+    <span class="token property">  "to"</span><span class="token operator">:</span> <span class="token string">"+15012345678"</span><span class="token punctuation">,</span>
+    <span class="token property">  "eventDate"</span><span class="token operator">:</span> <span class="token string">"2022-06-28T16:27:07.845Z"</span><span class="token punctuation">,</span>
+    <span class="token property">  "text"</span><span class="token operator">:</span> <span class="token string">"Nice picture!"</span><span class="token punctuation">,</span>
+    <span class="token property">  "segmentCount"</span><span class="token operator">:</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+    </code>
+    </pre>
+
+    # Rate Limit
+    <div class="m-markdown regular-font">
+    <p>In our APIs we use a rate limit. The rate limit is the maximum number of calls you want to allow in a particular time interval.
+    Setting rate limits helps us to provide the best performance of integration between your software and Telgorithm by preventing other clients from affecting you.  </p>
+    <p>Despite the fact that there is no accepted standard for HTTP rate-limiting headers, we were guided by <a target="_blank" href="https://www.ietf.org/archive/id/draft-ietf-httpapi-ratelimit-headers-05.html"><strong>IETF draft: RateLimit Fields for HTTP</strong></a>.  </p>
+    <p>We use these HTTP headers on APIs endpoints:  </p>
+    <pre><code>RateLimit-Limit: containing the requests quota in the time window;
+    RateLimit-Remaining: containing a non-negative integer which represents the remaining requests quota in the current time window;
+    RateLimit-Reset: amount of seconds when the full quota will be available;
+    </code></pre>
+    <p>Default quotas:</p>
+    <table>
+    <thead>
+    <tr>
+    <th>Endpoint</th>
+    <th>Default</th>
+    </tr>
+    </thead>
+    <tbody><tr>
+    <td>POST <code>messaging/v1/OutboundMessages</code></td>
+    <td>100 per 10 seconds</td>
+    </tr>
+    <tr>
+    <td>POST <code>messaging/v1/Phones</code></td>
+    <td>120 per hour</td>
+    </tr>
+    <tr>
+    <tr>
+    <td>GET, POST, Other <code>carrierlookup/v1/Numbers/*</code></td>
+    <td>1000 per 10 seconds</td>
+    </tr>
+    <tr>
+    <td>All REST GET endpoints</td>
+    <td>100 per 10 seconds</td>
+    </tr>
+    <tr>
+    <td>REST non-GET endpoints</td>
+    <td>100 per 10 seconds</td>
+    </tr>
+    </tbody></table>
+    <p>When quota is exceeded, server do not serve the request replying instead with a 429 HTTP status code.  </p>
+    <p>If you need a bigger quota <a href="mailto:support@telgorithm.com">contact us</a>.</p>
+    </div>
+
+    # OpenAPI specification
 
     We utilize OpenAPI, a standardized specification that defines and documents APIs. In essence, OpenAPI serves as a clear blueprint for our API's structure, endpoints, and data formats.
     An exciting advantage of OpenAPI is its capacity to assist you in effortlessly generating client libraries for various programming languages.
-    
+
     Our OpenAPI specification is publicly accessible here: https://api.telgorithm.com/messaging/swagger/v1/swagger.json \
     Feel free to dive into the OpenAPI documentation for further insights: https://swagger.io/specification/
 
     ## OpenAPI Generator
     OpenAPI Generator generates code from an OpenAPI specification. It can create code for client libraries, server stubs, documentation and configuration.
-    
+
     There are a number of ways to use OpenAPI Generator. Installing OpenAPI Generator's CLI tool allows users to generate all available generators from the command line. Learn more: https://openapi-generator.tech/docs/installation
 
     ## Generating Telgorithm's messaging client using OpenAPI Generator Online
-    OpenAPI Generator Online allows you to generate clients without installing OpenAPI Generator locally. Web application is available at the following address: http://api.openapi-generator.tech/index.html
-    1) Make a HTTP GET request to http://api.openapi-generator.tech/api/gen/clients using Rapidoc UI - click on "GET /api/gen/clients" (Screenshot 1)
+    OpenAPI Generator Online allows you to generate clients without installing OpenAPI Generator locally. The web application is available at the following address: http://api.openapi-generator.tech/index.html
+    1) To make an HTTP GET request, please navigate to the web application and click on "GET /api/gen/clients" (Screenshot 1). After that, click the "Try" button (Screenshot 2).
     <p align="center">
       <img src="/media/images/open_api_generator_screenshot_1.webp" alt="Screenshot 1" /><br>
       <i>Screenshot 1</i>
     </p>
-    2) Click button "Try" (Screenshot 2)
     <p align="center">
       <img src="/media/images/open_api_generator_screenshot_2.webp" alt="Screenshot 2" /><br>
       <i>Screenshot 2</i>
     </p>
-    3) In server response you will receive array of available clients for generation - find your's and copy to clipboard. (Screenshot 3)
+    2) In the server response, you will receive an array of available clients for generation. Find the one you need and copy it to the clipboard (Screenshot 3),
     <p align="center">
       <img src="/media/images/open_api_generator_screenshot_3.webp" alt="Screenshot 3" /><br>
       <i>Screenshot 3</i>
     </p>
-    4) Click on "Post /api/gen/clients/{language}" (Screenshot 4)
+    4) Next, click on "Post /api/gen/clients/{language}" (Screenshot 4). In the "language" path parameter, paste the client you copied in step 3 (Screenshot 5).
     <p align="center">
       <img src="/media/images/open_api_generator_screenshot_4.webp" alt="Screenshot 4"/><br>
       <i>Screenshot 4</i>
     </p>
-    5) In "language" path parameter paste your client, copied on step 3 (Screenshot 5)
     <p align="center">
       <img src="/media/images/open_api_generator_screenshot_5.webp" alt="Screenshot 5" /><br>
       <i>Screenshot 5</i>
     </p>
-    6) In body of request ("Example" textarea) put payload (screenshot 6)
+    6) In the body of the request (in the "Example" textarea), provide the necessary payload (Screenshot 6).
     <p align="center">
       <img src="/media/images/open_api_generator_screenshot_6.webp" alt="Screenshot 6" /><br>
       <i>Screenshot 6</i>
     </p>
-     ```json
-      {
-        "openAPIUrl": "https://api.telgorithm.com/messaging/swagger/v1/swagger.json",
-        "options": {
-            "packageName": "telgorithm"
-        }
-      }
-      ```
-    7) Click button "Try" and wait for client generation (around 10 seconds)
-    8) You will receive a link for downloading generated client, just copy it and paste in browser URL address (Screenshot 7)
+    <pre style="position:relative">
+    <button onclick="this.innerHTML='Copied!'; setTimeout(() => this.innerHTML = 'Copy', 1500);
+    const copyText = `{ \n  &quot;openAPIUrl&quot;: &quot;https://api.telgorithm.com/messaging/swagger/v1/swagger.json&quot;, \n  &quot;options&quot;: { \n    &quot;packageName&quot;: &quot;telgorithm&quot; \n  } \n}`;
+    navigator.clipboard.writeText(copyText)" 
+    class="m-btn primary thin-border" style="position: absolute; right: 10px; top: 10px; min-width: 85px">
+    Copy
+    </button>
+    <code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">  "openAPIUrl"</span><span class="token operator">:</span> <span class="token string">"https://api.telgorithm.com/messaging/swagger/v1/swagger.json"</span><span class="token punctuation">,</span>
+    <span class="token property">  "options"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">      "packageName"</span><span class="token operator">:</span> <span class="token string">"telgorithm"</span>
+    <span class="token punctuation">  }</span>
+    <span class="token punctuation">}</span>
+    </code>
+    </pre>
+    7) Click the "Try" button and wait for the client generation process to complete (approximately 10 seconds).
+    8) Once generated, you will receive a link to download the client. Simply copy this link and paste it into your browser's URL address bar (Screenshot 7).
     <p align="center">
       <img src="/media/images/open_api_generator_screenshot_7.webp" alt="Screenshot 7" /><br>
       <i>Screenshot 7</i>
     </p>
-    9) Use generated client in your application (Screenshot 8)
+    9) Finally, you can use the generated client in your application (Screenshot 8).
     <p align="center">
       <img src="/media/images/open_api_generator_screenshot_8.webp" alt="Screenshot 8" /><br>
       <i>Screenshot 8</i>
     </p>
-
-         
-
