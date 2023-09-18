@@ -4413,6 +4413,9 @@ Update propagation: `+ee.chain.join(" -> ")),ee.type){case"self-declined":L.onDe
       rapi-doc::part(section-navbar-operations-top) {
         display: none;
       }
+      rapi-doc::part(section-navbar-scroll) {
+        padding-left: 15px;
+      }
     `}
     
 
