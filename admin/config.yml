@@ -19,6 +19,7 @@ collections:
     fields:
       - { name: date, label: Date, widget: datetime }
       - { name: lastUpdatedOn, label: Last updated on (leave empty for new articles), widget: datetime, required: false, default: "" }
+      - { name: sortByUpdatedDate, label: Sort by "Last updated on" date (article will be pulled up to the top), widget: boolean, required: false, default: false }
       - { name: previewImage, label: Preview Image, widget: image}
       - { name: articleType, label: Article Type}
       - { name: articleAddress, label: Article Address (use dash instead of whitespaces) /news/type-only-this-part}
