@@ -54,6 +54,7 @@ collections:
     extension: md
     fields:
       - { name: title, label: Title }
+      - { name: metaTitle, label: Meta Title, required: false }
       - { name: body, label: Body, widget: markdown }
   - name: policies
     label: Policies
