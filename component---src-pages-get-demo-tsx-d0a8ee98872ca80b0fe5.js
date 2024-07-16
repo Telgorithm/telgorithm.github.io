@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunklanding=self.webpackChunklanding||[]).push([[8903],{5749:function(a,n,e){e.r(n);var l=e(67294),u=e(11883);n.default=()=>(l.useEffect((()=>{(0,u.navigate)("/payg-trial/")}),[]),null)}}]);
+//# sourceMappingURL=component---src-pages-get-demo-tsx-d0a8ee98872ca80b0fe5.js.map
