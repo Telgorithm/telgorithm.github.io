@@ -18,11 +18,35 @@ collections:
     extension: md
     fields:
       - { name: date, label: Date, widget: datetime }
-      - { name: lastUpdatedOn, label: Last updated on (leave empty for new articles), widget: datetime, required: false, default: "" }
-      - { name: sortByUpdatedDate, label: Sort by "Last updated on" date (article will be pulled up to the top), widget: boolean, required: false, default: false }
-      - { name: previewImage, label: Preview Image, widget: image}
-      - { name: articleType, label: Article Type}
-      - { name: articleAddress, label: Article Address (use dash instead of whitespaces) /news/type-only-this-part}
+      - {
+          name: lastUpdatedOn,
+          label: Last updated on (leave empty for new articles),
+          widget: datetime,
+          required: false,
+          default: '',
+        }
+      - {
+          name: sortByUpdatedDate,
+          label: Sort by "Last updated on" date (article will be pulled up to the top),
+          widget: boolean,
+          required: false,
+          default: false,
+        }
+      - { name: previewImage, label: Preview Image, widget: image }
+      - { name: articleType, label: Article Type }
+      - {
+          name: 'categories',
+          label: 'Categories',
+          widget: 'select',
+          multiple: true,
+          options:
+            ['Industry Updates', '10DLC Insights', 'Product News', 'CSP Resources'],
+          required: false,
+        }
+      - {
+          name: articleAddress,
+          label: Article Address (use dash instead of whitespaces) /news/type-only-this-part,
+        }
       - { name: title, label: Title }
       - { name: metaTitle, label: Meta Title, required: false }
       - { name: metaDescription, label: Meta Description, widget: text, required: false }
@@ -36,7 +60,7 @@ collections:
     create: false
     extension: md
     fields:
-      - { name: photo, label: Photo, widget: image}
+      - { name: photo, label: Photo, widget: image }
       - { name: title, label: Title }
       - { name: firstName, label: First Name }
       - { name: lastName, label: Last Name }
@@ -76,4 +100,11 @@ collections:
     editor:
       preview: false
     fields:
-      - { name: code, label: Data, widget: code, default_language: 'json', allow_language_selection: false, output_code_only: true }
+      - {
+          name: code,
+          label: Data,
+          widget: code,
+          default_language: 'json',
+          allow_language_selection: false,
+          output_code_only: true,
+        }
